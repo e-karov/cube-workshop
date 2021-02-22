@@ -1,5 +1,7 @@
-// TODO: Require Controllers...
+const controllers = require('../controllers');
+const app = require('express')();
 
-module.exports = (app) => {
+
+module.exports = () => {
     // TODO...
 };
