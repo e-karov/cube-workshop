@@ -34,7 +34,6 @@
 
 
 const MongoClient = require('mongodb').MongoClient;
-const connectionString = "mongodb+srv://@cluster1.3efvc.mongodb.net/cubesDb?retryWrites=true&w=majority";
 
 const client = new MongoClient(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
