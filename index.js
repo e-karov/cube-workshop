@@ -4,10 +4,13 @@ const mongoose = require('mongoose');
 const config = require('./config/config')[env];
 const indexRouter = require('./routes');
 const express = require('express'); // const app = require('express')()
+const bodyParser = require('body-parser');
 const app = express();
 
 
+
 require('./config/express')(app);
+app.use(bodyParser.urlencoded({extended: true}) );
 app.use('/', indexRouter);
 
 mongoose.connect(config.databaseUrl, {
@@ -19,7 +22,7 @@ mongoose.connect(config.databaseUrl, {
         throw err;
     }
 
-    console.log('Database is set up and running');
+    console.log('Connected to database');
 })
 
 app.listen(config.port,
