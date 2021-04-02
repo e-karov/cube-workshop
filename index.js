@@ -1,13 +1,13 @@
 const env = process.env.NODE_ENV || 'development';
+require('dotenv').config();
 
-const mongoose = require('mongoose');
 const config = require('./config/config')[env];
-const indexRouter = require('./routes');
-const express = require('express'); // const app = require('express')()
+const express = require('express'); 
 const bodyParser = require('body-parser');
+
 const app = express();
-
-
+const indexRouter = require('./routes');
+const mongoose = require('mongoose');
 
 require('./config/express')(app);
 app.use(bodyParser.urlencoded({extended: true}) );
